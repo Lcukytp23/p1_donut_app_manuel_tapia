@@ -74,12 +74,13 @@ class _HomePageState extends State<HomePage> {
         //Tab bar
         TabBar(tabs: myTabs),
         //Tab bar view
-        const Expanded(child: TabBarView(children: [
-        DonutTab(),
-        BurgerTab(),
-        SmoothieTab(),
-        PancakeTab(),
-        PizzaTab()
+        Expanded(
+          child: TabBarView(children: [
+            DonutTab(),
+            const BurgerTab(),
+            const SmoothieTab(),
+            const PancakeTab(),
+            const PizzaTab()
         ]))
 
         //Total del carrito      
