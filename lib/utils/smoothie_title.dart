@@ -1,46 +1,36 @@
 import 'package:flutter/material.dart';
 
-class DonutTile extends StatelessWidget {
-  final String donutFlavor;
-  final String donutPrice;
-  final dynamic donutColor;
+class SmoothieTitle extends StatelessWidget {
+  final String smoothieFlavor;
+  final String smoothiePrice;
+  final dynamic smoothieColor; //dynamic porque sera de tipo de color
   final String imageName;
   final VoidCallback onAddToCart; // Callback para agregar al carrito
   final VoidCallback onFavoriteToggle; // Callback para cambiar el estado del favorito
-
-  // Constructor para recibir los valores
-  const DonutTile({
-    super.key, 
-    required this.donutFlavor,
-    required this.donutPrice,
-    required this.donutColor,
-    required this.imageName,
-    required this.onAddToCart,
-    required this.onFavoriteToggle, // Para manejar el icono de favorito
-  });
+  const SmoothieTitle({super.key, required this.smoothieFlavor, required this.smoothiePrice, this.smoothieColor, required this.imageName, required this.onAddToCart, required this.onFavoriteToggle});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12),
       child: Container(
-        decoration: BoxDecoration(color: donutColor [100], borderRadius: BorderRadius.circular(24)),
+        decoration: BoxDecoration(color: smoothieColor [100], borderRadius: BorderRadius.circular(24)),
       child: Column(
         children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [Container(
-            decoration: BoxDecoration(color: donutColor[200], 
+            decoration: BoxDecoration(color: smoothieColor[200], 
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(24), 
               bottomLeft: Radius.circular(24))),
             padding: 
             const EdgeInsets.symmetric(vertical: 8,horizontal: 18),
-            child: Text("\$$donutPrice",
+            child: Text("\$$smoothiePrice",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: donutColor[800]
+                  color: smoothieColor[800]
                 ),),
           )],),
               //Donut picture
@@ -51,12 +41,12 @@ class DonutTile extends StatelessWidget {
                 child: Image.asset(imageName),
               ),
               //Donut flavor Tex
-              Text(donutFlavor,
+              Text(smoothieFlavor,
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold
               ),),
-              Text("Dukin's",
+              Text("Starbucks",
               style: TextStyle(color: Colors.grey[600])),
               ////Love icon + add button
               Padding(
@@ -77,6 +67,3 @@ class DonutTile extends StatelessWidget {
     );
   }
 }
-
-
-

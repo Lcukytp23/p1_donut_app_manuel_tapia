@@ -9,11 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  logger: ^2.4.0
+  provider: ^6.0.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  
 
 flutter:
   uses-material-design: true
@@ -21,3 +25,7 @@ flutter:
   assets:
   - lib/images/
   - lib/icons/
+  - lib/burger_image/
+  - lib/Smoothie_image/
+  - lib/Image_pancakes/
+  - lib/Image_pizza/
